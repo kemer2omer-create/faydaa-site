@@ -1,1 +1,19 @@
+backend:
+  name: github
+  repo: kemer2omer-create/faydaa-site
+  branch: main
 
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
